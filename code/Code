@@ -1,0 +1,90 @@
+from machine import Pin
+import time
+from AppInventorLink import AppInventorLink
+
+# the phone needs to talk to the ESP
+# so we create the link and make the ESP act like a WiFi hotspot
+# this way the phone can connect directly to it
+link = AppInventorLink()
+link.start_ap("GoblinCar", "12345678")
+
+# now we need to connect the motor driver 
+# each motor needs 2 pins, so we assign 4 pins total
+IN1 = Pin(22, Pin.OUT)
+IN2 = Pin(23, Pin.OUT)
+IN3 = Pin(21, Pin.OUT)
+IN4 = Pin(18, Pin.OUT)
+
+# the relay controls the gun, and it works in active LOW mode
+# so 1 means OFF and 0 means ON
+relay = Pin(2, Pin.OUT)
+relay.value(1)  # OFF 
+
+# Turns all the motor pins off
+def stop():
+    IN1.off()
+    IN2.off()
+    IN3.off()
+    IN4.off()
+
+# which pins should be off and on for each direction
+def forward():
+    IN1.on(); IN2.off()
+    IN3.on(); IN4.off()
+
+def backward():
+    IN1.off(); IN2.on()
+    IN3.off(); IN4.on()
+
+def left():
+    IN1.off(); IN2.on()
+    IN3.on(); IN4.off()
+
+def right():
+    IN1.on(); IN2.off()
+    IN3.off(); IN4.on()
+
+def shoot():
+    relay.value(0)
+    time.sleep(0.3)
+    relay.value(1)
+
+# force safe start so nothing moves at startup
+stop()
+
+# if no command is recieved for a while, the motors stop
+last_command_time = time.ticks_ms()
+TIMEOUT = 700  
+
+# this runs whenever the app sends something
+def handle(params):
+    global last_command_time
+# we take the action sent from the app
+    action = params.get("action", "")
+    last_command_time = time.ticks_ms()
+# right function depending on the action
+    if action == "forward":
+        forward()
+    elif action == "backward":
+        backward()
+    elif action == "left":
+        left()
+    elif action == "right":
+        right()
+    elif action == "stop":
+        stop()
+    elif action == "shoot":
+        shoot()
+        stop()  # so no movement after shooting
+
+    return {"status": "ok"}
+
+link.on_request(handle)
+
+# main loop
+while True:
+    link.process()
+
+    # safety stop, if nothing is recieved recently
+    if time.ticks_diff(time.ticks_ms(), last_command_time) > TIMEOUT:
+        stop()
