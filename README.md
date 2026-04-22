@@ -1,832 +1,482 @@
-# Open Design and Technology  
-## Final Project README
+Open Design and Technology
+Final Project README
 
-> **Project Weight:** 70%  
-> **Team Size:** 2 students  
-> **Project Duration:** 4 weeks  
-> **Class Time Available:** 6 hours per class  
-> **Total Time Available:** 48 effort-hours per team  
-> **Project Type:** Playful, interactive, technology-based experience
+Project Weight: 70%
+Team Size: 2 students
+Project Duration: 4 weeks
+Class Time Available: 6 hours per class
+Total Time Available: 48 effort-hours per team
+Project Type: Playful, interactive, technology-based experience
 
----
+1. Team Identity
+1.1 Studio / Group Name
 
-# Before you begin
+Goblins Only
 
-## Fork and rename this repository
-After forking this repository, rename it using the format:
+1.2 Team Members
+| Name    | Primary Role           | Secondary Role | Strengths Brought to the Project           |
+| ------- | ---------------------- | -------------- | ------------------------------------------ |
+| Smera   | Fabrication and Design | Electronics    | Form development, prototyping, assembly    |
+| Shivani | Electronics and Coding | Mechanics      | Circuit building, debugging, ESP32 control |
 
-`ODT-2026-TeamName`
+1.3 Project Title
 
-### Example
-`ODT-2026-PixelWizards`
+Dart Goblin Inspired Gel Blaster
 
-Do not keep the default repository name.
+1.4 One-Line Pitch
 
----
+A mobile Dart Goblin inspired gel launcher that can be manually driven through an app and fires gel projectiles through a flute.
 
-# How to use this README
+1.5 Expanded Project Idea
 
-This file is your team’s **working project document**.
+The project is a mobile robotic system inspired by the Dart Goblin from Clash Royale. It consists of a wheeled base and a gel-shooting mechanism integrated into a flute-like structure to resemble the character. The robot is controlled through a mobile application, allowing the user to drive it and aim by repositioning the entire robot before shooting.
 
-You must keep updating it throughout the 4-week build period.  
-By the final review, this README should clearly show:
-- your idea,
-- your planning,
-- your design decisions,
-- your technical process,
-- your build progress,
-- your testing,
-- your failures and changes,
-- your final outcome.
+The experience is designed to be playful and interactive. Movement combined with shooting creates a satisfying interaction. The character-inspired design makes the system more engaging compared to a purely technical robot. The project integrates multiple technologies, including ESP32 Wi-Fi communication, a motor driver for movement, a relay module for triggering the gel blaster, and a mobile app built using MIT App Inventor.
 
-## Rules
-- Fill every section.
-- Do not delete headings.
-- If something does not apply, write `Not applicable` and explain why.
-- Add images, screenshots, sketches, links, and videos wherever useful.
-- Update task status and weekly logs regularly.
-- Use this file as evidence of process, not only as a final report.
+2. Philosophy Fit
+2.1 Experience, Not Social Problem
+2.2 What kind of experience are you creating?
 
----
+The experience is a remote-controlled robotic system where the user drives a robot and shoots gel projectiles.
 
-# 1. Team Identity
+The user should feel in control, curious, and engaged.
 
-## 1.1 Studio / Group Name
-`[Enter your group name]`
+The interaction encourages repeated use because positioning and movement create different outcomes each time.
 
-## 1.2 Team Members
+2.3 Design Persona
 
-| Name | Primary Role | Secondary Role | Strengths Brought to the Project |
-|---|---|---|---|
-| `[Student 1]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
-| `[Student 2]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+We are designing this project as if we are a small creative studio making a playable object for teens and classmates.
 
-## 1.3 Project Title
-`[Enter the title of your project]`
+3. Inspiration
+3.1 References
+   
+| Source Type | Title / Link               | What Inspired You                          |
+| ----------- | -------------------------- | ------------------------------------------ |
+| Video Game  | Clash Royale (Dart Goblin) | Character design and shooting concept      |
+| Toy         | Nerf Blasters              | Shooting interaction and feedback          |
+| YouTube     | ESP32 Robot Projects       | Integration of motors and wireless control |
 
-## 1.4 One-Line Pitch
-`[Describe your project in one sentence]`
+3.2 Original Twist
 
-## 1.5 Expanded Project Idea
-In 1–2 paragraphs, explain:
-- what your project is,
-- what kind of playful experience it creates,
-- what makes it fun, curious, engaging, strange, satisfying, competitive, or delightful,
-- what technologies are involved.
+The project transforms a digital game mechanic into a physical, character-driven interactive object. The shooting direction is controlled entirely by how the robot is positioned, making movement and navigation central to the interaction. The core behavior of the original game character is preserved while adapting it to real-world constraints like movement and space.
 
-**Response:**  
-`[Write here]`
+4. Project Intent
+4.1 Core Interaction Loop
 
----
+Drive the robot, position it, shoot, reposition, and repeat.
 
-# 2. Philosophy Fit
+4.2 Intended Player / Audience
 
-## 2.1 Experience, Not Social Problem
-This module does **not** require your project to solve a large social problem.
+| Question                            | Response                         |
+| ----------------------------------- | -------------------------------- |
+| Who is this for?                    | Teens and classmates             |
+| Age range                           | 14 to 25                         |
+| Solo or multiplayer                 | Solo                             |
+| Expected duration of one round      | Depends on available ammunition  |
+| What should the player feel?        | In control, curious, and engaged |
+| Is explanation required before use? | Minimal                          |
 
-You are allowed to build:
-- toys,
-- games,
-- interactive objects,
-- playful machines,
-- kinetic artifacts,
-- humorous devices,
-- strange but delightful experiences,
-- things that are entertaining to use or watch.
+4.3 Player Journey
 
-## 2.2 What kind of experience are you creating?
-Answer the following:
-- What is the experience?
-- What do you want the player or participant to feel?
-- Why would someone want to try it again?
+Approach: The player sees a wheeled robot with a flute-shaped launcher.
 
-**Response:**  
-`[Write here]`
+Start: The player opens the application and connects to the robot’s Wi-Fi network.
 
-## 2.3 Design Persona
-Complete the sentence below:
+First Action: The player tests movement controls.
 
-> We are designing this project as if we are a small creative studio making a **[toy / game / playable object / interactive experience]** for **[children / teens / adults / classmates / exhibition visitors / mixed audience]**.
+Main Interaction: The player drives the robot and shoots at targets.
 
-**Response:**  
-`[Write here]`
+System Response: The robot moves and fires based on input commands.
 
----
+Win / Lose / End Condition: The interaction ends when the user stops or ammunition runs out.
 
-# 3. Inspiration
+Reset: The player reloads and continues.
 
-## 3.1 References
-List what inspired the project.
+4.4 Rules of Play
+Movement is controlled through the application
+Shooting is controlled through the application
+Aiming is done by repositioning the robot
+The round ends when the user stops or ammunition runs out
+5. Definition of Success
+5.1 Definition of “Playable”
+The robot powers on correctly
+Movement responds accurately to input
+Shooting functions reliably
+Communication between the application and the robot is stable
+5.2 Minimum Viable Version
 
-| Source Type | Title / Link | What Inspired You |
-|---|---|---|
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
+A basic system with movement and shooting controlled through the application.
 
-## 3.2 Original Twist
-What makes your project original?
+5.3 Stretch Features
 
-**Response:**  
-`[Write here]`
+Improved structural design and finishing of the character.
 
----
+6. System Overview
+   
+6.1 Project Type
 
-# 4. Project Intent
+Electronics-based
+Mechanical
+App-connected
+Motorized
+Fabricated structure
+Game logic based
+Installation / tabletop experience
 
-## 4.1 Core Interaction Loop
-Describe the main loop of interaction.
+6.2 High-Level System Description
 
-Examples:
-- press → launch → score → reset
-- connect → control → observe → repeat
-- turn → trigger → react → repeat
-- move object → sensor detects → sound/light response → player reacts
+The system uses an ESP32 as the central controller, which creates a Wi-Fi access point. The mobile application sends HTTP requests containing action commands. The ESP32 processes these commands and controls the motor driver for movement and a relay module for activating the gel blaster. Movement is achieved using differential drive, and shooting is triggered electronically. All components are mounted on a chassis, and direction is controlled by repositioning the robot.
 
-**Response:**  
-`[Write here]`
+6.3 Input / Output Map
 
-## 4.2 Intended Player / Audience
+| System Part                  | Type            | What It Does                            |
+| ---------------------------- | --------------- | --------------------------------------- |
+| Mobile application           | Input           | Sends movement and shooting commands    |
+| ESP32                        | Processing      | Processes commands and controls outputs |
+| Motor driver and motors      | Output          | Moves the robot                         |
+| Relay module and gel blaster | Output          | Fires projectiles                       |
+| Chassis                      | Physical Action | Supports structure and movement         |
 
-| Question | Response |
-|---|---|
-| Who is this for? | `[Write here]` |
-| Age range | `[Write here]` |
-| Solo or multiplayer | `[Write here]` |
-| Expected duration of one round | `[Write here]` |
-| What should the player feel? | `[Write here]` |
-| Is explanation required before use? | `[Write here]` |
+7. Sketches and Visual Planning
+7.1 Concept Sketch
 
-## 4.3 Player Journey
-Describe exactly how a player will use the project.
+7.2 Labeled Build Sketch
 
-1. **Approach:** `[How does the player first encounter it?]`
-2. **Start:** `[How do they begin?]`
-3. **First Action:** `[What do they do first?]`
-4. **Main Interaction:** `[What keeps happening during use?]`
-5. **System Response:** `[How does the project respond?]`
-6. **Win / Lose / End Condition:** `[How does one round end?]`
-7. **Reset:** `[How does the next round begin?]`
+7.3 Approximate Dimensions
 
-## 4.4 Rules of Play
-If your project is a game, list the rules clearly.
+| Dimension        | Value                |
+| ---------------- | -------------------- |
+| Length           | 19 cm                |
+| Width            | 16 cm                |
+| Height           | 43 cm                |
+| Estimated weight | More than 1 kilogram |
 
-- `[Rule 1]`
-- `[Rule 2]`
-- `[Rule 3]`
-- `[Rule 4]`
+Estimated weight	More than 1 kilogram
+8. Mechanical Planning
+8.1 Mechanical Features
+Wheels
+8.2 Mechanical Description
 
----
+The robot uses a four-wheel chassis. Motors are grouped into left and right sides to allow differential drive movement.
 
-# 5. Definition of Success
+8.3 Motion Planning
 
-## 5.1 Definition of “Playable”
-Your project will be considered complete only if these conditions are met.
+The robot moves forward, backward, and turns left or right using differential drive controlled by the motor driver. Movement continues only while commands are being received from the application. If no command is received within a short duration, the system automatically stops the motors using a timeout mechanism. This prevents unintended continuous movement. Possible issues include slipping, uneven turning, and reduced control precision.
 
-- [ ] `[Condition 1]`
-- [ ] `[Condition 2]`
-- [ ] `[Condition 3]`
-- [ ] `[Condition 4]`
-- [ ] `[Condition 5]`
+8.4 Simulation / CAD / Animation Before Making
 
-## 5.2 Minimum Viable Version
-What is the smallest version of this project that still delivers the core experience?
+Not applicable, as no digital simulation was used.
 
-**Response:**  
-`[Write here]`
+8.5 Changes After Digital Testing
 
-## 5.3 Stretch Features
-What features are nice to have but not essential?
+Not applicable.
 
-- `[Stretch feature 1]`
-- `[Stretch feature 2]`
-- `[Stretch feature 3]`
+9. Electronics Planning
+9.1 Electronics Used
+   
+| Component            | Quantity | Purpose                   |
+| -------------------- | -------- | ------------------------- |
+| ESP32                | 1        | Main controller           |
+| DC motors            | 4        | Movement                  |
+| Motor driver (L298N) | 1        | Controls motors           |
+| Relay module         | 1        | Controls firing mechanism |
+| Gel blaster          | 1        | Shooting mechanism        |
 
----
+9.2 Wiring Plan
 
-# 6. System Overview
+The battery powers the motor driver. A buck converter steps down voltage to power the ESP32 through the 3.3V pin. The ESP32 connects to the motor driver using GPIO pins 22, 23, 21, and 18. The relay module is connected to GPIO 2. Motors are grouped into left and right sides. All components share a common ground.
 
-## 6.1 Project Type
-Check all that apply.
+9.3 Circuit Diagram
 
-- [ ] Electronics-based
-- [ ] Mechanical
-- [ ] Sensor-based
-- [ ] App-connected
-- [ ] Motorized
-- [ ] Sound-based
-- [ ] Light-based
-- [ ] Screen/UI-based
-- [ ] Fabricated structure
-- [ ] Game logic based
-- [ ] Installation / tabletop experience
-- [ ] Other: `[Write here]`
+9.4 Power Plan
 
-## 6.2 High-Level System Description
-Explain how the system works in simple terms.
+| Question         | Response                                                |
+| ---------------- | ------------------------------------------------------- |
+| Power source     | Battery (two 18650 cells)                               |
+| Voltage required | Approximately 7.4 volts                                 |
+| Current concerns | High current draw from motors and gel blaster           |
+| Safety concerns  | Avoid overheating, short circuits, and incorrect wiring |
 
-Include:
-- input,
-- processing,
-- output,
-- physical structure,
-- app interaction if any.
+10. Software Planning
+    
+10.1 Software Tools
+    
+| Tool             | Purpose                           |
+| ---------------- | --------------------------------- |
+| MicroPython      | Programming the ESP32             |
+| MIT App Inventor | Developing the mobile application |
 
-**Response:**  
-`[Write here]`
+10.2 Software Logic
 
-## 6.3 Input / Output Map
+On startup, the ESP32 initializes all pins and creates a Wi-Fi access point. The system listens for HTTP requests from the mobile application. Each request contains an action parameter such as forward, backward, left, right, stop, or shoot. Based on this action, the ESP32 controls the motor driver or activates the relay module. A timeout mechanism continuously checks if commands are being received. If no command is received within the defined time, the motors are stopped automatically for safety.
 
-| System Part | Type | What It Does |
-|---|---|---|
-| `[Button / Sensor / Switch / App Input]` | Input | `[Describe]` |
-| `[ESP32 / Controller]` | Processing | `[Describe]` |
-| `[LED / Motor / Servo / Buzzer / Display]` | Output | `[Describe]` |
-| `[Mechanical Assembly]` | Physical Action | `[Describe]` |
+10.3 Code Flowchart
 
----
+Put image here
 
-# 7. Sketches and Visual Planning
+10.4 Pseudocode
 
-## 7.1 Concept Sketch
-Add an early sketch of the full idea.
+Start system
+Initialize Wi-Fi access point
+Set motor pins as outputs
+Set relay to off
+Stop motors
 
-**Insert image below:**  
-`[Upload image and link here]`
+Loop:
+Receive request
+If action is forward, move forward
+If action is backward, move backward
+If action is left, turn left
+If action is right, turn right
+If action is stop, stop motors
+If action is shoot, activate relay, wait, deactivate relay, stop motors
+If no command is received within timeout, stop motors
 
-Example:
-```md
+Repeat loop
 
-```
+11. MIT App Inventor Plan
+11.1 Is an app part of this project?
 
-## 7.2 Labeled Build Sketch
-Add a sketch with labels showing:
-- structure,
-- electronics placement,
-- user touch points,
-- moving parts,
-- output elements.
+Yes
 
-**Insert image below:**  
-`[Upload image and link here]`
+11.2 Why is the app needed?
 
-## 7.3 Approximate Dimensions
+The application allows remote control of the robot’s movement and shooting.
 
-| Dimension | Value |
-|---|---|
-| Length | `[Write here]` |
-| Width | `[Write here]` |
-| Height | `[Write here]` |
-| Estimated weight | `[Write here]` |
+11.3 App Features
 
----
+| Feature             | Purpose                     |
+| ------------------- | --------------------------- |
+| Directional buttons | Control movement            |
+| Shoot button        | Activate shooting mechanism |
 
-# 8. Mechanical Planning
+11.4 UI Mockup
 
-## 8.1 Mechanical Features
-Check all that apply.
+11.5 App Screen Flow
 
-- [ ] Gears
-- [ ] Pulleys
-- [ ] Belt drives
-- [ ] Linkages
-- [ ] Hinges
-- [ ] Shafts
-- [ ] Springs
-- [ ] Bearings
-- [ ] Wheels
-- [ ] Sliders
-- [ ] Levers
-- [ ] Not applicable
+Step 1: Open application
+Step 2: Connect to robot’s Wi-Fi
+Step 3: Control movement and shooting
+Step 4: Exit
 
-## 8.2 Mechanical Description
-Describe the mechanism and what it is meant to do.
+12. Bill of Materials
+12.1 Full BOM
 
-**Response:**  
-`[Write here]`
+| Item                 | Quantity         | In Kit? | Need to Buy? | Estimated Cost |
+| -------------------- | ---------------- | ------- | ------------ | -------------- |
+| ESP32                | 1                | No      | Yes          | 400            |
+| Motor driver (L298N) | 1                | No      | Yes          | 179            |
+| Relay module         | 1                | No      | Yes          | 65             |
+| Buck converter       | 1                | No      | Yes          | 65             |
+| Gel blaster          | 1                | No      | Yes          | 900            |
+| Chassis              | 1                | No      | Yes          | 197            |
+| Motors and wheels    | 1 set            | No      | Yes          | 389            |
+| Jumper wires         | Approximately 20 | Yes     | No           | 100            |
+| Battery and holder   | 1 set            | No      | Yes          | 251            |
+| Power module         | 1                | No      | Yes          | 65             |
 
-## 8.3 Motion Planning
-If something moves, explain:
-- what moves,
-- what causes the movement,
-- how far it moves,
-- how fast it moves,
-- what could go wrong.
+12.2 Material Justification
 
-**Response:**  
-`[Write here]`
+All components were selected based on availability, compatibility with the ESP32, and ease of integration.
 
-## 8.4 Simulation / CAD / Animation Before Making
-If your project includes mechanical motion, document the digital planning before fabrication.
+12.3 Items to Purchase Separately
 
-| Tool Used | File / Link | What Was Tested |
-|---|---|---|
-| `[Fusion 360 / Tinkercad / other]` | `[Link or screenshot]` | `[What did you validate?]` |
-| `[Tool]` | `[Link or screenshot]` | `[What did you validate?]` |
+| Item                  | Why Needed                | Purchase Link  | Latest Safe Date to Procure | Status   |
+| --------------------- | ------------------------- | -------------- | --------------------------- | -------- |
+| All listed components | Required for system build | Not applicable | Week 1                      | Received |
 
-## 8.5 Changes After Digital Testing
-What changed after the CAD, animation, or simulation stage?
+12.4 Budget Summary
 
-**Response:**  
-`[Write here]`
+| Budget Item           | Estimated Cost     |
+| --------------------- | ------------------ |
+| Electronics           | 1674               |
+| Mechanical parts      | 586                |
+| Fabrication materials | 0                  |
+| Purchased extras      | 316                |
+| Contingency           | 200                |
+| Total                 | Approximately 2776 |
 
----
+12.5 Budget Reflection
 
-# 9. Electronics Planning
+Costs were managed by selecting readily available components and avoiding unnecessary additions.
 
-## 9.1 Electronics Used
+13. Planning the Work
+13.1 Team Working Agreement
 
-| Component | Quantity | Purpose |
-|---|---:|---|
-| `[ESP32]` | `1` | `[Main controller]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
+Work was divided based on strengths, but both members contributed across all areas when needed. Shivani focused more on electronics, coding, and app development, while Smera focused more on fabrication and mechanical assembly. However, both members were involved in testing, debugging, and integration. Decisions were made jointly after testing different approaches. Progress was reviewed at the end of each session, and if a task was delayed, both members worked together to resolve it. Documentation was updated regularly throughout the process.
 
-## 9.2 Wiring Plan
-Describe the main electrical connections.
+13.2 Task Breakdown
 
-**Response:**  
-`[Write here]`
+| Task ID | Task                                | Owner   | Estimated Hours | Deadline | Dependency     | Status |
+| ------- | ----------------------------------- | ------- | --------------- | -------- | -------------- | ------ |
+| T1      | Finalize concept                    | Both    | 2               | Week 1   | None           | Done   |
+| T2      | Complete BOM                        | Both    | 1               | Week 1   | T1             | Done   |
+| T3      | Test ESP32 and motors               | Shivani | 3               | Week 1   | T1             | Done   |
+| T4      | Assemble chassis                    | Smera   | 4               | Week 2   | T1             | Done   |
+| T5      | Integrate motor driver              | Both    | 3               | Week 2   | T3             | Done   |
+| T6      | Add gel blaster control using relay | Shivani | 3               | Week 2   | T3             | Done   |
+| T7      | Build app (MIT App Inventor)        | Shivani | 4               | Week 2   | T3             | Done   |
+| T8      | Integrate full system               | Both    | 5               | Week 3   | T4, T5, T6, T7 | Done   |
+| T9      | Debug and fix issues                | Both    | 3               | Week 3   | T8             | Done   |
+| T10     | Playtesting                         | Both    | 2               | Week 4   | T8             | Done   |
+| T11     | Final documentation                 | Both    | 4               | Week 4   | T10            | Done   |
 
-## 9.3 Circuit Diagram
-Insert a hand-drawn or software-made circuit diagram.
+13.3 Responsibility Split
 
-**Insert image below:**  
-`[Upload image and link here]`
+Area | Main Owner | Support Owner
+Concept and gameplay | Both | —
+Electronics | Shivani | Smera
+Coding | Shivani | Smera
+App | Smera | Shivani
+Mechanical build | Smera | Shivani
+Testing | Both | —
+Documentation | Both | —
 
-## 9.4 Power Plan
+14. Weekly Milestones
+14.1 Four-Week Plan
 
-| Question | Response |
-|---|---|
-| Power source | `[USB / battery / adapter / other]` |
-| Voltage required | `[Write here]` |
-| Current concerns | `[Write here]` |
-| Safety concerns | `[Write here]` |
+Week 1 — Plan and De-risk
 
----
+Idea finalized
+Core interaction decided
+BOM completed
+Basic testing completed
 
-# 10. Software Planning
+Week 2 — Build Subsystems
 
-## 10.1 Software Tools
+Electronics tested
+Movement working
+App control working
 
-| Tool / Platform | Purpose |
-|---|---|
-| `[MicroPython / Arduino / MIT App Inventor / CAD tool / other]` | `[Purpose]` |
-| `[Tool]` | `[Purpose]` |
+Week 3 — Integrate
 
-## 10.2 Software Logic
-Describe what the code must do.
+Full system assembled
+Movement and shooting integrated
 
-Include:
-- startup behavior,
-- input handling,
-- sensor reading,
-- decision logic,
-- output behavior,
-- communication logic,
-- reset behavior.
+Week 4 — Refine and Finish
 
-**Response:**  
-`[Write here]`
+Issues fixed
+Testing completed
+Final documentation completed
+14.2 Weekly Update Log
 
-## 10.3 Code Flowchart
-Insert a flowchart showing your code logic.
+| Week   | Planned Goal         | What Actually Happened   | What Changed              | Next Steps      |
+| ------ | -------------------- | ------------------------ | ------------------------- | --------------- |
+| Week 1 | Planning and testing | Basic system tested      | Switched to Wi-Fi control | Build structure |
+| Week 2 | Build subsystems     | Movement and app working | Adjusted wiring           | Add shooting    |
+| Week 3 | Integration          | Full system working      | Simplified wiring         | Testing         |
+| Week 4 | Finalization         | Stable system            | Minor fixes               | Submission      |
 
-Suggested sequence:
-- start,
-- initialize,
-- wait for input,
-- read input,
-- decision,
-- trigger output,
-- repeat or reset,
-- error handling.
+15. Risks and Unknowns
+15.1 Risk Register
+    
+| Risk                             | Type      | Likelihood | Impact | Mitigation Plan            | Owner |
+| -------------------------------- | --------- | ---------- | ------ | -------------------------- | ----- |
+| Relay always on                  | Technical | Medium     | High   | Correct wiring and logic   | Both  |
+| Jumper cap issue on motor driver | Technical | Medium     | Medium | Verify connections         | Both  |
+| Battery not charged              | Technical | High       | High   | Ensure charging before use | Both  |
 
-**Insert image below:**  
-`[Upload image and link here]`
+15.2 Biggest Unknown Right Now
 
-## 10.4 Pseudocode
+Power stability when running motors and gel blaster simultaneously.
 
-```text
-[Write your pseudocode here]
-```
+16. Testing and Playtesting
+16.1 Technical Testing Plan
+    
+| What Needs Testing | How You Will Test It     | Success Condition |
+| ------------------ | ------------------------ | ----------------- |
+| Wi-Fi connection   | Reconnect multiple times | Stable connection |
+| Movement           | Drive in all directions  | Accurate response |
+| Shooting           | Trigger repeatedly       | Consistent firing |
 
----
+16.2 Playtesting Plan
 
-# 11. MIT App Inventor Plan
+| Question                             | How You Will Check |
+| ------------------------------------ | ------------------ |
+| Do players understand what to do?    | Observe usage      |
+| Is the interaction satisfying?       | Collect feedback   |
+| Do players want another turn?        | Repeat interaction |
+| Is the response clear and immediate? | Observe delay      |
 
-## 11.1 Is an app part of this project?
-- [ ] Yes
-- [ ] No
+16.3 Testing and Debugging Log
 
-If yes, complete this section.
+| Date  | Problem Found                       | Type      | What You Tried         | Result | Next Action      |
+| ----- | ----------------------------------- | --------- | ---------------------- | ------ | ---------------- |
+| Day 1 | Relay always on                     | Technical | Fixed logic and wiring | Worked | Continue testing |
+| Day 2 | Motor not working due to ENB jumper | Technical | Corrected jumper       | Worked | Continue         |
+| Day 3 | Battery not charged                 | Technical | Charged battery        | Worked | Ensure charging  |
 
-## 11.2 Why is the app needed?
-Explain what the app adds to the experience.
+16.4 Playtesting Notes
 
-Examples:
-- remote control,
-- score tracking,
-- mode selection,
-- personalization,
-- triggering effects,
-- displaying data.
+| Tester    | What They Did          | What Confused Them | What They Enjoyed    | What You Will Change |
+| --------- | ---------------------- | ------------------ | -------------------- | -------------------- |
+| Classmate | Used controls and shot | Initial controls   | Shooting interaction | Improve clarity      |
 
-**Response:**  
-`[Write here]`
+17. Build Documentation
+17.1 Fabrication Process
 
-## 11.3 App Features
+The chassis was assembled using a kit. Motors were mounted and connected to the motor driver. The ESP32, relay, and wiring were secured. The gel blaster was mounted and aligned.
 
-| Feature | Purpose |
-|---|---|
-| `[Bluetooth connect button]` | `[Purpose]` |
-| `[Score display]` | `[Purpose]` |
-| `[Control button / slider / label]` | `[Purpose]` |
+17.2 Build Photos
 
-## 11.4 UI Mockup
-Insert a sketch or screenshot of the app interface.
+17.3 Version History
 
-**Insert image below:**  
-`[Upload image and link here]`
+| Version | Date   | What Changed         | Why                     |
+| ------- | ------ | -------------------- | ----------------------- |
+| v1      | Week 1 | Basic movement       | Initial testing         |
+| v2      | Week 2 | App control          | Required remote control |
+| v3      | Week 3 | Shooting integration | Full functionality      |
 
-## 11.5 App Screen Flow
+18. Final Outcome
+18.1 Final Description
 
-1. `[Step 1]`
-2. `[Step 2]`
-3. `[Step 3]`
-4. `[Step 4]`
+A mobile robot controlled through a mobile application that can move and shoot gel projectiles.
 
----
+18.2 What Works Well
+Movement is responsive
+Shooting is consistent
+Application control is functional
+18.3 What Still Needs Improvement
+Power stability
+Wiring organization
+Control precision
+18.4 What Changed From the Original Plan
 
-# 12. Bill of Materials
+The project evolved into a fully integrated mobile system with wireless control and shooting functionality.
 
-## 12.1 Full BOM
+19. Reflection
+19.1 Team Reflection
 
-| Item | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec | Why This Choice? |
-|---|---:|---|---|---:|---|---|
-| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
+The team worked effectively by dividing tasks based on strengths.
 
-## 12.2 Material Justification
-Explain why you selected your main materials and components.
+19.2 Technical Reflection
 
-Examples:
-- Why acrylic instead of cardboard?
-- Why MDF instead of 3D print?
-- Why servo instead of DC motor?
-- Why bearing instead of a plain shaft hole?
+The project provided experience in integrating electronics, programming, and mechanical systems.
 
-**Response:**  
-`[Write here]`
+19.3 Design Reflection
 
-## 12.3 Items to Purchase Separately
+The importance of usability and clear interaction design was understood.
 
-| Item | Why Needed | Purchase Link | Latest Safe Date to Procure | Status |
-|---|---|---|---|---|
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
+19.4 If You Had One More Week
 
-## 12.4 Budget Summary
+We would improve power stability and clean up the structure to hide wiring and improve finishing.
 
-| Budget Item | Estimated Cost |
-|---|---:|
-| Electronics | `[Cost]` |
-| Mechanical parts | `[Cost]` |
-| Fabrication materials | `[Cost]` |
-| Purchased extras | `[Cost]` |
-| Contingency | `[Cost]` |
-| **Total** | `[Cost]` |
+20. Final Submission Checklist
+All sections are filled
+Image placeholders are added
+Testing is documented
+Reflection is complete
 
-## 12.5 Budget Reflection
-If your cost is too high, what can be simplified, removed, substituted, or shared?
+22. Suggested Repository Structure
 
-**Response:**  
-`[Write here]`
-
----
-
-# 13. Planning the Work
-
-## 13.1 Team Working Agreement
-Write how your team will work together.
-
-Include:
-- how tasks are divided,
-- how decisions are made,
-- how progress will be checked,
-- what happens if a task is delayed,
-- how documentation will be maintained.
-
-**Response:**  
-`[Write here]`
-
-## 13.2 Task Breakdown
-
-| Task ID | Task | Owner | Estimated Hours | Deadline | Dependency | Status |
-|---|---|---|---:|---|---|---|
-| T1 | `[Finalize concept]` | `[Name]` | `2` | `[Date]` | `None` | `To Do` |
-| T2 | `[Complete BOM]` | `[Name]` | `1` | `[Date]` | `T1` | `To Do` |
-| T3 | `[Test electronics]` | `[Name]` | `2` | `[Date]` | `T1` | `To Do` |
-| T4 | `[Build structure]` | `[Name]` | `4` | `[Date]` | `T1` | `To Do` |
-| T5 | `[Write control code]` | `[Name]` | `4` | `[Date]` | `T3` | `To Do` |
-| T6 | `[Integrate system]` | `[Name]` | `4` | `[Date]` | `T4, T5` | `To Do` |
-| T7 | `[Playtest]` | `[Name]` | `2` | `[Date]` | `T6` | `To Do` |
-| T8 | `[Refine and document]` | `[Name]` | `3` | `[Date]` | `T7` | `To Do` |
-
-## 13.3 Responsibility Split
-
-| Area | Main Owner | Support Owner |
-|---|---|---|
-| Concept and gameplay | `[Name]` | `[Name]` |
-| Electronics | `[Name]` | `[Name]` |
-| Coding | `[Name]` | `[Name]` |
-| App | `[Name]` | `[Name]` |
-| Mechanical build | `[Name]` | `[Name]` |
-| Testing | `[Name]` | `[Name]` |
-| Documentation | `[Name]` | `[Name]` |
-
----
-
-# 14. Weekly Milestones
-
-## 14.1 Four-Week Plan
-
-### Week 1 — Plan and De-risk
-Expected outcomes:
-- [ ] Idea finalized
-- [ ] Core interaction decided
-- [ ] Sketches made
-- [ ] BOM completed
-- [ ] Purchase needs identified
-- [ ] Key uncertainty identified
-- [ ] Basic feasibility tested
-
-### Week 2 — Build Subsystems
-Expected outcomes:
-- [ ] Electronics tests completed
-- [ ] CAD / structure planning completed
-- [ ] App UI started if needed
-- [ ] Mechanical concept tested
-- [ ] Main subsystems partially working
-
-### Week 3 — Integrate
-Expected outcomes:
-- [ ] Physical body built
-- [ ] Electronics integrated
-- [ ] Code connected to hardware
-- [ ] App connected if required
-- [ ] First playable version exists
-
-### Week 4 — Refine and Finish
-Expected outcomes:
-- [ ] Technical bugs reduced
-- [ ] Playtesting completed
-- [ ] Improvements made
-- [ ] Documentation completed
-- [ ] Final build ready
-
-## 14.2 Weekly Update Log
-
-| Week | Planned Goal | What Actually Happened | What Changed | Next Steps |
-|---|---|---|---|---|
-| Week 1 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 2 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 3 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 4 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-
----
-
-# 15. Risks and Unknowns
-
-## 15.1 Risk Register
-
-| Risk | Type | Likelihood | Impact | Mitigation Plan | Owner |
-|---|---|---|---|---|---|
-| `[Example: Bluetooth disconnects]` | `Technical` | `Medium` | `High` | `[Fallback interaction / simplify connection flow]` | `[Name]` |
-| `[Example: Structure breaks during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce joints / change material]` | `[Name]` |
-| `[Risk]` | `[Technical / Material / Time / Gameplay]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
-| `[Risk]` | `[Type]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
-
-## 15.2 Biggest Unknown Right Now
-What is the single biggest uncertainty in your project at this stage?
-
-**Response:**  
-`[Write here]`
-
----
-
-# 16. Testing and Playtesting
-
-## 16.1 Technical Testing Plan
-
-| What Needs Testing | How You Will Test It | Success Condition |
-|---|---|---|
-| `[Bluetooth connection]` | `[Method]` | `[What counts as success?]` |
-| `[Mechanism movement]` | `[Method]` | `[What counts as success?]` |
-| `[Sensor behavior]` | `[Method]` | `[What counts as success?]` |
-| `[App communication]` | `[Method]` | `[What counts as success?]` |
-
-## 16.2 Playtesting Plan
-
-| Question | How You Will Check |
-|---|---|
-| Do players understand what to do? | `[Method]` |
-| Is the interaction satisfying? | `[Method]` |
-| Do players want another turn? | `[Method]` |
-| Is the challenge balanced? | `[Method]` |
-| Is the response clear and immediate? | `[Method]` |
-
-## 16.3 Testing and Debugging Log
-
-| Date | Problem Found | Type | What You Tried | Result | Next Action |
-|---|---|---|---|---|---|
-| `[Date]` | `[Describe issue]` | `[Technical / Mechanical / UI / Gameplay]` | `[What you did]` | `[Worked / Partly / Failed]` | `[Next step]` |
-| `[Date]` | `[Describe issue]` | `[Type]` | `[What you did]` | `[Result]` | `[Next step]` |
-
-## 16.4 Playtesting Notes
-
-| Tester | What They Did | What Confused Them | What They Enjoyed | What You Will Change |
-|---|---|---|---|---|
-| `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
-| `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
-
----
-
-# 17. Build Documentation
-
-## 17.1 Fabrication Process
-Describe how the project was physically made.
-
-Include:
-- cutting,
-- 3D printing,
-- assembly,
-- fastening,
-- wiring,
-- finishing,
-- revisions.
-
-**Response:**  
-`[Write here]`
-
-## 17.2 Build Photos
-Add photos throughout the project.
-
-Suggested images:
-- early sketch,
-- prototype,
-- electronics testing,
-- mechanism test,
-- app screenshot,
-- final build.
-
-Example:
-```md
-
-
-
-```
-
-## 17.3 Version History
-
-| Version | Date | What Changed | Why |
-|---|---|---|---|
-| `v1` | `[Date]` | `[Describe]` | `[Reason]` |
-| `v2` | `[Date]` | `[Describe]` | `[Reason]` |
-| `v3` | `[Date]` | `[Describe]` | `[Reason]` |
-
----
-
-# 18. Final Outcome
-
-## 18.1 Final Description
-Describe the final version of your project.
-
-**Response:**  
-`[Write here]`
-
-## 18.2 What Works Well
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
-
-## 18.3 What Still Needs Improvement
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
-
-## 18.4 What Changed From the Original Plan
-How did the project change from the initial idea?
-
-**Response:**  
-`[Write here]`
-
----
-
-# 19. Reflection
-
-## 19.1 Team Reflection
-What did your team do well?  
-What slowed you down?  
-How well did you manage time, tasks, and responsibilities?
-
-**Response:**  
-`[Write here]`
-
-## 19.2 Technical Reflection
-What did you learn about:
-- electronics,
-- coding,
-- mechanisms,
-- fabrication,
-- integration?
-
-**Response:**  
-`[Write here]`
-
-## 19.3 Design Reflection
-What did you learn about:
-- designing for play,
-- delight,
-- clarity,
-- physical interaction,
-- player understanding,
-- iteration?
-
-**Response:**  
-`[Write here]`
-
-## 19.4 If You Had One More Week
-What would you improve next?
-
-**Response:**  
-`[Write here]`
-
----
-
-# 20. Final Submission Checklist
-
-Before submission, confirm that:
-- [ ] Team details are complete
-- [ ] Project description is complete
-- [ ] Inspiration sources are included
-- [ ] Player journey is written
-- [ ] Sketches are added
-- [ ] BOM is complete
-- [ ] Purchase list is complete
-- [ ] Budget summary is complete
-- [ ] Mechanical planning is documented if applicable
-- [ ] App planning is documented if applicable
-- [ ] Code flowchart is added
-- [ ] Task breakdown is complete
-- [ ] Weekly logs are updated
-- [ ] Risk register is complete
-- [ ] Testing log is updated
-- [ ] Playtesting notes are included
-- [ ] Build photos are included
-- [ ] Final reflection is written
-
----
-
-# 21. Suggested Repository Structure
-
-```text
 project-repo/
 ├── README.md
 ├── images/
-│   ├── concept-sketch.jpg
-│   ├── labeled-sketch.jpg
-│   ├── circuit-diagram.jpg
-│   ├── ui-mockup.jpg
-│   ├── prototype-1.jpg
-│   └── final-build.jpg
 ├── code/
-│   ├── main.py
-│   ├── test_code.py
-│   └── notes.md
 ├── cad/
-│   ├── models/
-│   └── screenshots/
 └── docs/
-    ├── references.md
-    └── extra-notes.md
-```
 
----
-
-# 22. Instructor Review
-
-## 22.1 Proposal Approval
-- [ ] Approved to proceed
-- [ ] Approved with changes
-- [ ] Rework required before proceeding
-
-**Instructor comments:**  
-`[Instructor fills this section]`
-
-## 22.2 Midpoint Review
-`[Instructor fills this section]`
-
-## 22.3 Final Review Notes
-`[Instructor fills this section]`
+22. Instructor Review
+22.1 Proposal Approval
+22.2 Midpoint Review
+22.3 Final Review Notes
